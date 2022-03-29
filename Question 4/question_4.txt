@@ -1,0 +1,25 @@
+#If you were working on an application that was rendering a page/screen very slowly, how would you go about
+investigating and fixing the issue?
+
+- find out what is causing the rendering to be slow using performance testing tools
+- find which component renders the slowest
+- find the component file and fix the problem
+
+The cause can be from a variety of things:
+
+- Not using the right components.
+- Data processed on a component part is redundant.
+- Data processing is not in the component part and at the right time.
+- The data processing process uses inappropriate coding.
+- Components always update / render when not needed.
+- Excessive REST API calls.
+- etc
+
+The solution:
+
+- Use the right component in right case
+- limit data processing as needed and as efficient as possible
+- make sure the data processing is in the right component at the right time
+- correct the code in data processing if it is not precise and efficient
+- use features to prevent re-rendering of components such as pure components or others
+- make sure API calls is as needed and as small as possible so that it is not slow and heavy

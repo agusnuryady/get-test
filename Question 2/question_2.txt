@@ -1,0 +1,17 @@
+#When should we and should we not use Redux?
+
+#So when should you use Redux?
+
+- You have a very large and complex app with multiple states that are needed in many places of the app
+- You have often refreshing states
+- You need to add complex logic whenever certain states are updated
+- The codebase is medium-sized or above and has many contributors
+
+#when shouldn't you use Redux?
+
+- Small codebase, with only a few states that need to be shared across components
+- You’re still getting experience using React
+- Your app only consists of UI changes
+- Top-level component props are only being passed down as far as their children
+- Your app doesn't require a lot of constantly refreshing data
+- Has no use for an authentication system, like checking if a user is authenticated/logged in

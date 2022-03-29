@@ -1,0 +1,35 @@
+#When should you use higher order components and pure components?
+
+#HOC is useful when you want to inject additional behaviours to the existing Component. You can use HOC to inject:
+- React Lifecycle (eg. execute code in componentWillMount)
+- State (eg. react-redux’s connect)
+- Component (Parent Component, Child Component, Sibling Component)
+- Style
+
+#Pure Components is useful to restricts the re-rendering ensuring the higher performance of the Component.
+components which do not re-renders when the value of state and props has been updated with the same values. 
+If the value of the previous state or props and the new state or props is the same, 
+the component is not re-rendered.
+
+Example:
+
+#HOC
+
+const HOC = Comp => ({children, ...props}) => (
+  <Comp {...props}>
+    {children}
+  </Comp>
+)
+
+const CompWithHOC = HOC(List)
+
+#Pure Component
+
+import React, { memo } from 'react';
+
+class ContactList extends React.PureComponent {
+  render() {
+    const { contacts } = this.props;
+    return <List data={contacts} />;
+  }
+}

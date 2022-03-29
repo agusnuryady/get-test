@@ -1,0 +1,4 @@
+#Write one raw sql query that fulfils the following condition using the same schema as Question 7
+
+#here the sql query: SELECT `events`.`id`, `events`.`name`, `events`.`category`, `events`.`start_datetime`, `events`.`createdAt`, `events`.`updatedAt`, `ticket_types`.`id` AS `ticket_types.id`, `ticket_types`.`event_id` AS `ticket_types.event_id`, `ticket_types`.`name` AS `ticket_types.name`, `ticket_types`.`price` AS `ticket_types.price`, `ticket_types`.`capacity` AS `ticket_types.capacity` FROM `events` AS `events` LEFT OUTER
+JOIN ( `ticket_types` AS `ticket_types` INNER JOIN `transactions` AS `ticket_types->tr` ON `ticket_types`.`id` = `ticket_types->tr`.`ticket_type_id` AND `ticket_types->tr`.`user_id` != '1' ) ON `events`.`id` = `ticket_types`.`event_id` LEFT OUTER JOIN `user_likes` AS `ul` ON `events`.`category` = `ul`.`category` WHERE (`ul`.`user_id` = '1' AND (datediff(`start_datetime`, NOW()) <= 60 AND datediff(`start_datetime`, NOW()) >= 0));

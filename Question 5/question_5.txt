@@ -1,0 +1,3 @@
+#Task List app link Expo go: https://expo.dev/@agusnuryady/test-app-get?serviceType=classic&distribution=expo-go
+
+#make sure you download expo go in your device before install app
