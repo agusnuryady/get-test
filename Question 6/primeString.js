@@ -22,19 +22,15 @@ function countPrimeStrings(number, i) {
   if (i == 0) return 1;
 
   let cnt = 0;
-
-  // Consider every suffix up to 6 digits
-  for (let j = 1; j <= 6; j++) {
+  // Consider every suffix up to numbers length
+  for (let j = 0; j <= i; j++) {
     // Number should not have
     // a leading zero and it
     // should be a prime number
-    if (
-      i - j >= 0 &&
-      number[i - j] != "0" &&
-      isPrime(number.substring(i - j, i))
-    ) {
+    if (j >= 0 && number[j] != "0" && isPrime(number.substring(j, j + 1))) {
       cnt += countPrimeStrings(number, i - j);
       cnt %= MOD;
+      /*    console.log('c', number.substring(i - j, i), isPrime(number.substring(i - j, i)), cnt) */
     }
   }
 
@@ -43,7 +39,7 @@ function countPrimeStrings(number, i) {
 }
 
 // Driver code
-let s1 = "11373";
+let s1 = "113738";
 let l = s1.length;
 console.log(countPrimeStrings(s1, l));
 
